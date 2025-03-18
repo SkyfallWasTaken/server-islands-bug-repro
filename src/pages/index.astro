@@ -1,11 +1,20 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Island from "../components/Island.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<p>Repro steps:</p>
+	<ul>
+		<li>Load the page</li>
+		<li>Wait for the island to load</li>
+		<li>Go to another page</li>
+		<li>Go back to this page with the links in the header</li>
+		<li>Observe how the island doesn't load</li>
+	</ul>
+	<Island server:defer>
+		<div slot="fallback">
+			Loading...
+		</div>
+	</Island>
 </Layout>

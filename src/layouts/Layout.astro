@@ -1,3 +1,7 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,8 +10,18 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+		<ClientRouter />
 	</head>
 	<body>
+		<header>
+			<h1>Astro Server Island Repro</h1>
+			<nav>
+				<a href="/">Home</a>
+				<a href="/foo">Go to other page</a>
+			</nav>
+		</header>
 		<slot />
 	</body>
 </html>
