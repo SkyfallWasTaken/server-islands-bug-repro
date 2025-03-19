@@ -1,9 +1,4 @@
 ---
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-const time = await sleep(3000); // Let's simulate a DB call or something
 const randomNumber = Math.random();
 
 export const prerender = false;
